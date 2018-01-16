@@ -23,7 +23,6 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"k8s.io/kubernetes/pkg/kubelet/dockershim/errors"
 )
 
 func TestFileStore(t *testing.T) {
@@ -104,7 +103,7 @@ func TestFileStore(t *testing.T) {
 		err = store.Delete(c.key)
 		assert.NoError(t, err)
 		_, err = store.Read(c.key)
-		assert.EqualValues(t, errors.CheckpointNotFoundError, err)
+		assert.EqualError(t, err, "checkpoint is not found.")
 	}
 
 	// Test delete non existed checkpoint

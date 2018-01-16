@@ -23,8 +23,6 @@ import (
 	"path/filepath"
 
 	"github.com/golang/glog"
-	utilstore "k8s.io/kubernetes/pkg/kubelet/util/store"
-	utilfs "k8s.io/kubernetes/pkg/util/filesystem"
 	hashutil "k8s.io/kubernetes/pkg/util/hash"
 )
 
